@@ -1,15 +1,18 @@
-# Ipopt does not install successfully
 from pyomo.environ import *
 
+# Create a Pyomo model
 model = ConcreteModel()
 
-model.x = Var(initialize=1.0)
-model.y = Var(initialize=1.0)
+# Define decision variables
+model.x = Var(within=NonNegativeReals)
 
-model.obj = Objective(expr=model.x**2 + model.y**2)
-model.con1 = Constraint(expr=model.x**2 + model.y**2 <= 1)
+# Define the objective function
+model.objective = Objective(expr=model.x**2 - 4*model.x, sense=minimize)
 
-opt = SolverFactory('ipopt')
-results = opt.solve(model, tee=True)
+# Solve the optimization problem with Ipopt
+solver = SolverFactory('ipopt',executable='/workspaces/optimization/ipopt_solver/ipopt')
+results = solver.solve(model)
 
-model.display()
+# Print the results
+print("Optimal value of x:", value(model.x))
+print("Optimal objective value:", value(model.objective))
