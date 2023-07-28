@@ -33,14 +33,14 @@ model.C4 = pyo.Constraint(expr=x[4] + 2 * y >= 30)
 
 # Objective function
 
-model.obj = pyo.Objective(expr=sum_x + y)
+model.obj = pyo.Objective(expr=sum_x + y, sense=minimize)
 
 # Solver
 
 opt = SolverFactory("glpk")
 results = opt.solve(model)
 
-# model.pprint()
+model.pprint()
 
 # Results
 
