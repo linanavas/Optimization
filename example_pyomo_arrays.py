@@ -19,7 +19,6 @@ model.Pg = pyo.Var(range(Ng), bounds=(0, None))
 Pg = model.Pg
 
 # Constraints
-
 pg_sum = sum([Pg[g] for g in dataGen["id"]])
 print(pg_sum)
 
