@@ -4,3 +4,5 @@ pyomo
 ortools
 pulp
 ipython
+geneticalgorithm
+matplotlib
