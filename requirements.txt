@@ -6,3 +6,4 @@ pulp
 ipython
 geneticalgorithm
 matplotlib
+openpyxl
