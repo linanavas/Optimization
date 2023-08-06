@@ -10,22 +10,24 @@
 
 from ortools.sat.python import cp_model
 
+
 class VarArraySolutionPrinter(cp_model.CpSolverSolutionCallback):
-    """ Print intermediate solutions"""
+    """Print intermediate solutions"""
 
     def __init__(self, variables):
         cp_model.CpSolverSolutionCallback.__init__(self)
         self.__variables = variables
-        self.__solution_count =0
+        self.__solution_count = 0
 
     def on_solution_callback(self):
         self.__solution_count += 1
         for v in self.__variables:
-            print('%s=%i' % (v, self.Value(v)), end = ' ')
+            print("%s=%i" % (v, self.Value(v)), end=" ")
         print()
-    
+
     def solution_count(self):
         return self.__solution_count
+
 
 model = cp_model.CpModel()
 
@@ -45,14 +47,14 @@ model.Add(5 * x + 2 * y - 6 * z <= 37)
 solver = cp_model.CpSolver()
 status = solver.Solve(model)
 
-print('Status = ', solver.StatusName(status))
-print('FO = ', solver.ObjectiveValue())
-print('x = ', solver.Value(x))
-print('y = ', solver.Value(y))
-print('z = ', solver.Value(z))
+print("Status = ", solver.StatusName(status))
+print("FO = ", solver.ObjectiveValue())
+print("x = ", solver.Value(x))
+print("y = ", solver.Value(y))
+print("z = ", solver.Value(z))
 
 # To print all feaseble solutions
 # Objective function must be commented
 
-solution_printer = VarArraySolutionPrinter([x,y,z])
+solution_printer = VarArraySolutionPrinter([x, y, z])
 status = solver.SearchForAllSolutions(model, solution_printer)
