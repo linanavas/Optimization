@@ -7,3 +7,5 @@ ipython
 geneticalgorithm
 matplotlib
 openpyxl
+pymoo
+pyswarm
