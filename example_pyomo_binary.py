@@ -28,9 +28,9 @@ model.obj = pyo.Objective(expr=pyo.summation(C), sense=minimize)
 
 model.total = pyo.Constraint(expr=pyo.summation(n) == 2100)
 model.C1 = pyo.Constraint(expr=C[1] == 2 * n[1])
-model.C2 = pyo.Constraint(expr=C[2] == 6 * n[2] + 1000*b)
+model.C2 = pyo.Constraint(expr=C[2] == 6 * n[2] + 1000 * b)
 model.C3 = pyo.Constraint(expr=C[3] == 7 * n[3])
-model.C4 = pyo.Constraint(expr=n[2] <= 1000*b)
+model.C4 = pyo.Constraint(expr=n[2] <= 1000 * b)
 
 opt = SolverFactory("glpk")
 opt.solve(model)

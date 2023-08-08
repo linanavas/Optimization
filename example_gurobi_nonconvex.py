@@ -47,4 +47,3 @@ print("C1=", pyo.value(C[1]))
 print("C2=", pyo.value(C[2]))
 print("C3=", pyo.value(C[3]))
 print("CTotal=", pyo.value(pyo.summation(C)))
-
