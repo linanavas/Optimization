@@ -21,6 +21,19 @@ This is a way to install ipopt solver for non linear problems with pyomo
 !unzip -o -q ipopt-linux64
 ```
 
+## Linearization techniques
+
+### Big M:
+Binary * Continous
+
+```
+C = b*x
+Where b is binary, x is continuos
+=====>
+-b*M <= C >= b*M
+-(1-b)*M <= C-x >= (1-b)*M
+```
+
 ## Other sources
 
 Vehicle Routing problems

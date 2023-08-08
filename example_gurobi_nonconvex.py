@@ -24,9 +24,9 @@ C = model.c
 n = model.n
 
 # pyo.summation(C) is equivalent to C[1]+C[2]+C[3]
-model.obj = pyo.Objective(expr=pyo.summation(C), sense=maximize)
+model.obj = pyo.Objective(expr=pyo.summation(C), sense=minimize)
 
-model.total = pyo.Constraint(expr=pyo.summation(C) == 2100)
+model.total = pyo.Constraint(expr=pyo.summation(n) == 2100)
 model.C1 = pyo.Constraint(expr=C[1] == 0.01 * n[1] * n[1] + 2 * n[1])
 model.C2 = pyo.Constraint(expr=C[2] == 6 * n[2] * n[1])
 model.C3 = pyo.Constraint(expr=C[3] == 7 * n[3])
@@ -41,9 +41,10 @@ opt.solve(model)
 print("n1=", pyo.value(n[1]))
 print("n2=", pyo.value(n[2]))
 print("n3=", pyo.value(n[3]))
-print("nTotal=", pyo.summation(n))
+print("nTotal=", pyo.value(pyo.summation(n)))
 
 print("C1=", pyo.value(C[1]))
 print("C2=", pyo.value(C[2]))
 print("C3=", pyo.value(C[3]))
-print("CTotal=", pyo.summation(C))
+print("CTotal=", pyo.value(pyo.summation(C)))
+
