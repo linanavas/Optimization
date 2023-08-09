@@ -33,6 +33,19 @@ Where b is binary, x is continuos
 -b*M <= C >= b*M
 -(1-b)*M <= C-x >= (1-b)*M
 ```
+### Two binaries:
+Binary * Binary
+
+```
+C = b1 * b2
+Where b1, b2 are binaries
+Then:
+C = z
+z <= b1
+z <= b2
+z >= b1 + b2 - 1
+z is binary
+```
 
 ## Other sources
 
