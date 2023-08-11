@@ -46,6 +46,13 @@ z <= b2
 z >= b1 + b2 - 1
 z is binary
 ```
+## Dual variables
+
+If the dual variable of a constraint is 0, it means that the constraint is not in its boundary.  
+
+If the dual is different than 0, it means that the constraint is in its boundary. And the dual is the "shadow price".  
+
+Shadow prices represents how much you can improve the objective function if you "loosen/relax" the constraint a little.
 
 ## Other sources
 

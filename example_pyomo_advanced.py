@@ -46,14 +46,19 @@ for t in hours:
 # Solver
 
 opt = SolverFactory("glpk")
-results = opt.solve(model)
+# opt.options['MIPgap'] = 0.0001 # Gurobi parameter for gap tolerance
+# opt.options['Time Limit'] = 60 # Gurobi parameter for limit time in seconds
+
+results = opt.solve(model, tee=True)
+# tee = True Information about the solver
 
 # model.pprint()
+
 # Print results
 
-for m in machines:
-    for t in hours:
-        print("x" + str(m) + "," + str(t) + " = " + str(pyo.value(x[m, t])))
+# for m in machines:
+#    for t in hours:
+#        print("x" + str(m) + "," + str(t) + " = " + str(pyo.value(x[m, t])))
 
 print()
 print("Production = ", str(pyo.value(model.obj)))
