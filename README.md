@@ -4,15 +4,7 @@ This repo contains optimization examples from the Udemy course [Optimization wit
 
 Below find some notes and instructions for packages installation.
 
-
-Use the following commands to install GLPK:
-```
-sudo apt update
-sudo apt install glpk-utils
-glpsol --version
-```
-
-Command to create and activate virutal environment: 
+Command to create and activate virutal environment on Github codespaces: 
 
 ```
 virtualenv myenv
@@ -20,6 +12,14 @@ source myenv/bin/activate
 ```
 
 ## Packages installation
+Run ```make install```.
+
+Use the following commands to install GLPK:
+```
+sudo apt update
+sudo apt install glpk-utils
+glpsol --version
+```
 
 This is a way to install ipopt solver for non linear problems with pyomo
 
