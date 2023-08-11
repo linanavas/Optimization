@@ -21,7 +21,7 @@ sudo apt install glpk-utils
 glpsol --version
 ```
 
-This is a way to install ipopt solver for non linear problems with pyomo
+This is a way to install ipopt solver for non linear problems with pyomo:
 
 ```
 !wget -N -q "https://matematica.unipv.it/gualandi/solvers/ipopt-linux64.zip"
