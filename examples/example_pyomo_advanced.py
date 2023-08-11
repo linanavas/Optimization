@@ -43,6 +43,12 @@ for t in hours:
     if t > 1:
         model.C4.add(expr=x[1, t] + x[2, t - 1] + x[3, t] + x[4, t] <= 10)
 
+# Bounds could be replaced by an inequality constraint
+# model.C5 = pyo.ConstraintList()
+# for t in hours:
+#    for m in machines:
+#        model.C5.add(pyo.inequality(0,x[m,t],10))
+
 # Solver
 
 opt = SolverFactory("glpk")
