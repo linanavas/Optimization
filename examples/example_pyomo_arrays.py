@@ -6,8 +6,8 @@ from pyomo.opt import SolverFactory
 
 
 # Inputs
-dataGen = pd.read_csv("data/generators.csv")
-dataLoad = pd.read_csv("data/load.csv")
+dataGen = pd.read_csv("../data/generators.csv")
+dataLoad = pd.read_csv("../data/load.csv")
 
 Ng = len(dataGen)
 

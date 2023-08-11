@@ -1,6 +1,6 @@
 # Mixed integer non linear problems (MINLP) using decomposition
 # Define a solver for mip and other for nlp
-# Cuoenne solveS MINLP by itself but there are issues with the installation
+# Cuoenne solves MINLP by itself but there are issues with the installation
 
 import pyomo.environ as pyo
 from pyomo.environ import *
