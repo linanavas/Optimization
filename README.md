@@ -36,7 +36,7 @@ Binary * Continous
 ```
 C = b*x
 Where b is binary, x is continuos
-=====>
+Then:
 -b*M <= C >= b*M
 -(1-b)*M <= C-x >= (1-b)*M
 ```
