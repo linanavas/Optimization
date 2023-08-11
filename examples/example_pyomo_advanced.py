@@ -5,21 +5,37 @@ import pyomo.environ as pyo
 # from pyomo.environ import *
 from pyomo.opt import SolverFactory
 
-
-# Sets
-machines = range(1, 4 + 1)
-hours = range(1, 10 + 1)
-
 # Model
 model = pyo.ConcreteModel()
+
+# Sets
+# machines = range(1, 4 + 1)
+# hours = range(1, 10 + 1)
+
+# Pyomo parameters
+# Equivalent to define T = 10 and M = 4
+# They do not need to be defined before they are used
+model.T = pyo.Param(initialize=10)
+T = model.T
+model.M = pyo.Param(initialize=4)
+M = model.M
+
+# Pyomo sets
+model.hours = pyo.Set(initialize=range(1, T + 1))
+hours = model.hours
+model.machines = pyo.Set(initialize=range(1, M + 1))
+machines = model.machines
+# Equivalent to pyo.RangeSet(1,T) or pyo.Set(initialize=[1,2,3,...,T])
+# It does not need to be sequential, ex: [1,4,6...]
 
 # Variables
 model.x = pyo.Var(machines, hours, within=pyo.Integers, bounds=(0, 10))
 x = model.x
 
 # Objective function
-total_producton = sum([x[m, t] for m in machines for t in hours])
-model.obj = pyo.Objective(expr=total_producton, sense=pyo.maximize)
+# total_production = sum([x[m, t] for m in machines for t in hours])
+total_production = pyo.summation(x)
+model.obj = pyo.Objective(expr=total_production, sense=pyo.maximize)
 
 # Constraint 1
 model.C1 = pyo.ConstraintList()
