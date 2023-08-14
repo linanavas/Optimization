@@ -2,7 +2,9 @@
 
 This repo contains optimization examples from the Udemy course [Optimization with Python: Solve Operations Research Problems](https://www.udemy.com/course/optimization-with-python-linear-nonlinear-and-cplex-gurobi/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_term=_._ag_77879424134_._ad_535397245863_._kw__._de_c_._dm__._pl__._ti_dsa-1007766171312_._li_1003659_._pd__._&matchtype=&gclid=Cj0KCQjwldKmBhCCARIsAP-0rfyaVSAGVon-YqCde9Zk6TURDLKAe0beqpmpRje1_2pCseJ6N2FBBgoaAplkEALw_wcB)
 
-Below find some notes and instructions for packages installation.
+Below find the instructions for packages installation and some notes from the course.
+
+## Activate virtual envronment
 
 Command to create and activate virtual environment on Github codespaces: 
 
@@ -96,5 +98,6 @@ results = opt.solve(model, warmstart = True)
 
 Vehicle Routing problems
 https://developers.google.com/optimization/routing/vrp?hl=es-419
+
 Dynamic optimization
 https://pyomo.readthedocs.io/en/stable/modeling_extensions/dae.html

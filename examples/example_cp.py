@@ -48,7 +48,7 @@ solver = cp_model.CpSolver()
 status = solver.Solve(model)
 
 print("Status = ", solver.StatusName(status))
-print("FO = ", solver.ObjectiveValue())
+print("OF = ", solver.ObjectiveValue())
 print("x = ", solver.Value(x))
 print("y = ", solver.Value(y))
 print("z = ", solver.Value(z))
