@@ -96,3 +96,5 @@ results = opt.solve(model, warmstart = True)
 
 Vehicle Routing problems
 https://developers.google.com/optimization/routing/vrp?hl=es-419
+Dynamic optimization
+https://pyomo.readthedocs.io/en/stable/modeling_extensions/dae.html
