@@ -4,7 +4,7 @@ This repo contains optimization examples from the Udemy course [Optimization wit
 
 Below find the instructions for packages installation and some notes from the course.
 
-## Activate virtual envronment
+## Activate virtual environment
 
 Command to create and activate virtual environment on Github codespaces: 
 
