@@ -61,6 +61,37 @@ If the dual is different than 0, it means that the constraint is in its boundary
 
 Shadow prices represents how much you can improve the objective function if you "loosen/relax" the constraint a little.
 
+## Constraint's rules in pyomo
+
+```
+model.C1 = pyo.Constraint(expr = 2*x + 2*y == 0)
+model.C2 = pyo.Constraint(expr = x - 3*y >= 5)
+```
+Same as
+```
+model.C1 = pyo.Constraint(rule = myrule1)
+model.C2 = pyo.Constraint(rule = myrule2)
+
+# pyo.Constraint(RangeIndex1, RangeIndex2, ..., rule = myrule)
+
+def myrule1(model):
+    return 2*model.x + 2*model.y == 0
+
+def myrule2(model):
+    return model.x - 3*model.y >= 5
+```
+
+## Warm start
+
+```
+model.x[0] = 1
+model.x[1] = 0
+
+...
+
+results = opt.solve(model, warmstart = True)
+```
+
 ## Other sources
 
 Vehicle Routing problems
