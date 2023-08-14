@@ -83,7 +83,7 @@ def myrule2(model):
     return model.x - 3*model.y >= 5
 ```
 
-## Warm start
+## Warm start with pyomo
 
 ```
 model.x[0] = 1
